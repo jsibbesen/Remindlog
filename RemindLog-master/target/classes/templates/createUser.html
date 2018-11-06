@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>RemindLog - Create User</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}"/>
+    <link rel="stylesheet" href="/static/styles/stylesOpretBrugerSite.css" th:href="@{/styles/stylesOpretBrugerSite.css}"/>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <div class="header">
+
+        <div id="logo">Remindlog</div>
+
+    </div>
+
+    <h1>Create User</h1>
+    <h3>Fill out following fields:</h3>
+
+    <!--<p th:if="${loginError}" class="error">Wrong user or password</p>-->
+    <form th:action="@{/createUser}" method="post">
+        <div class="login">
+            <div class="login-screen">
+                <div class="login-form">
+                    <label for="username"> </label>:
+                    <input type="text" class="login-field" required id="username" name="username" min="4" max="25" placeholder="Username" autofocus="autofocus" />
+                    <label for="email"> </label>:
+                    <input type="email" class="login-field" required id="email" name="email" min="4" max="35" placeholder="Email" autofocus="autofocus" />
+                    <div class="control-group">
+                        <label for="password"> </label>:
+                        <input type="password" class="login-field"  required id="password" min="5" max="25" placeholder="Password" name="password" />
+                    </div>
+                    <!--TEST-->
+                    <div class="control-group">
+                        <label for="password"> </label>:
+                        <input type="password" class="login-field"  required min="5" max="25" placeholder="Password" name="passwordVal" />
+                    </div>
+                    <input type="submit" class="btn" value="Create User" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
